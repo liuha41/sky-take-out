@@ -85,8 +85,6 @@ public class EmployeeServiceImpl implements EmployeeService {
 //        //设置当前记录创始人id和修改人id
 //        employee.setCreateUser(BaseContext.getCurrentId());
 //        employee.setUpdateUser(BaseContext.getCurrentId());
-
-
         // 插入员工数据
         employeeMapper.insert(employee);
 
