@@ -109,7 +109,6 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
 
         List<ShoppingCart> list = shoppingCartMapper.list(shoppingCart);
 
-
         if(list != null && list.size() > 0){
             shoppingCart = list.get(0);
 
