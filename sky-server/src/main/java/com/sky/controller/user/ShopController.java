@@ -1,12 +1,17 @@
 package com.sky.controller.user;
 
+import com.sky.properties.JwtProperties;
 import com.sky.result.Result;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Optional;
 
 @RestController("userShopController")
 @RequestMapping("/user/shop")
@@ -15,6 +20,9 @@ import org.springframework.web.bind.annotation.*;
 public class ShopController {
 
     public static final String KEY = "SHOP_STATUS";
+
+    @Autowired
+    private JwtProperties jwtProperties;
 
     @Autowired
     private RedisTemplate redisTemplate;
@@ -26,8 +34,8 @@ public class ShopController {
     @GetMapping("/status")
     @ApiOperation("获取店铺的营业状态")
     public Result<Integer> getStatus(){
-        Integer status = (Integer) redisTemplate.opsForValue().get(KEY);
-        log.info("获取店铺的营业状态为:{}",status==1?"营业中":"打烊中");
+        Integer status = Optional.ofNullable((Integer) redisTemplate.opsForValue().get(KEY)).orElse(0);
+        log.info("User获取店铺的营业状态为:{}",status==1?"营业中":"打烊中");
         return Result.success(status);
     }
 }
