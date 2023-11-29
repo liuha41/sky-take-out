@@ -37,4 +37,10 @@ public interface OrderService {
      * @return
      */
     PageResult pageQuery4User(int page, int pageSize, Integer status);
+
+    /**
+     * 客户催单
+     * @param id
+     */
+    void reminder(Long id);
 }

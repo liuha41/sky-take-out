@@ -8,14 +8,17 @@ sky:
     password: 123mysql
   alioss:
     endpoint: oss-cn-beijing.aliyuncs.com
-    access-key-id:
-    access-key-secret: 
+    access-key-id: LTAI5tE1Gytq33XCRSqm5GhU
+    access-key-secret: bLce3bSZQloO9sTmfNZidutYNBe3xJ
     bucket-name: cangqiongitheima
   redis:
     host: localhost
     port: 6379
     password: 123456
     database: 10
+  wechat:
+    appid: wxeeb21ee136199d81
+    secret: 620fe394d560ddab7f056ab8681c9de0
 
 
 
