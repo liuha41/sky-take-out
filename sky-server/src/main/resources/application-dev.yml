@@ -8,8 +8,8 @@ sky:
     password: 123mysql
   alioss:
     endpoint: oss-cn-beijing.aliyuncs.com
-    access-key-id: LTAI5tE1Gytq33XCRSqm5GhU
-    access-key-secret: bLce3bSZQloO9sTmfNZidutYNBe3xJ
+    access-key-id: 
+    access-key-secret: 
     bucket-name: cangqiongitheima
   redis:
     host: localhost
